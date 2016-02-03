@@ -1,0 +1,11 @@
+insert into book (id, title, authors) values (1, 'Pierwsza książka', 'Jan Kowalski');
+insert into book (id, title, authors) values (2, 'Druga książka', 'Zbigniew Nowak');
+insert into book (id, title, authors) values (3, 'Trzecia książka', 'Janusz Jankowski');
+insert into book (id, title, authors) values (4, 'Czwarta Ksiazka', 'Adam Mickiewicz');
+insert into book (id, title, authors) values (5, 'Piata ksiazka', 'Juliusz Slowacki');
+insert into book (id, title, authors) values (6, 'Szosta', 'Mikolaj Rej');
+insert into book (id, title, authors) values (7, 'Siodma', 'Mihail Bulhakov');
+insert into book (id, title, authors) values (8, 'Osma', 'Arthur Schoppenhauer');
+insert into book (id, title, authors) values (9, 'Dziewiata', 'Imie Nazwisko');
+insert into book (id, title, authors) values (10, 'Dziesiata', 'Imie2 Nazwisko2');
+insert into book (id, title, authors) values (11, 'Jedenasta', 'Andrzej Sapkowski');
