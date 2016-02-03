@@ -12,6 +12,6 @@ public interface BookRepository extends JpaRepository<BookEntity, Long> {
     @Query("select book from BookEntity book where book.title like :title%")
     public List<BookEntity> findBookByTitle(@Param("title") String title);
 
-    @Query("select book from BookEntity book where book.authors like %:author%")
+    @Query("select book from BookEntity book join book.authors authors where authors.firstName like %:author% or authors.lastName like %:author%")
     public List<BookEntity> findBookByAuthor(@Param("author") String author);
 }

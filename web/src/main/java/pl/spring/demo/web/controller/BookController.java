@@ -14,6 +14,10 @@ import java.util.Map;
 public class BookController {
     @Autowired
     private BookService bookService;
+    
+    public BookController() {
+    	
+    }
 
     @RequestMapping(value = "/books", method = RequestMethod.GET)
     public String bookList(Map<String, Object> params) {

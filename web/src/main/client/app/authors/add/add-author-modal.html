@@ -1,0 +1,21 @@
+<div>
+    <form novalidate>
+        <div class="modal-header">
+            <h3 class="modal-title">Add an author</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+              <input type="text" placeholder="Author first name" ng-required="true" ng-model="author.firstName" />
+              <input type="text" placeholder="Author last name" ng-required="true" ng-model="author.lastName" />
+            </p>
+            <p>
+              {{comment}}
+              <pre>{{author | json}}</pre>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" ng-click="addThatAuthor()">Save Author</button>
+            <button class="btn btn-warning" ng-click="$dismiss()">Close</button>
+        </div>
+    </form>
+</div>

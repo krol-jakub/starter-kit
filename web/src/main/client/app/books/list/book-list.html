@@ -4,25 +4,28 @@
 <section>
     <div flash-message="5000" ></div>
     <br>
-    <p>Podaj tytuł książki:</p>
+    <p>Part of book title:</p>
     <input type="text" ng-model="prefix">
-    <button ng-click="search()">Szukaj</button>
-    <button ng-click="addBook()">Dodaj książkę</button>
+    <button ng-click="search()">Search</button>
+    <button ng-click="addBook()">Add book</button>
 
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-            <th>ID</th>
-            <th>Tytuł</th>
-            <th>Autorzy</th>
-            <th>Usuń</th>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Delete</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="book in books">
-            <td>{{ book.id }}</td>
             <td>{{ book.title }}</td>
-            <td>{{ book.authors }}</td>
+            <td>
+              <span ng-repeat="author in book.authors">
+                <span>{{ author.firstName + ' ' + author.lastName }}</span>
+                <span><br /></span>
+              </span>
+            </td>
             <td>
                 <button ng-click="deleteBook(book.id)">Usuń</button>
             </td>

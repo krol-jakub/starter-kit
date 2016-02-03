@@ -5,7 +5,7 @@ angular.module('app.books', ['ngRoute', 'app.main', 'ui.bootstrap', 'flash']).co
         templateUrl: 'books/list/book-list.html',
         controller: 'BookSearchController'
     });
-    $routeProvider.when('/books/add-book', {
-        templateUrl: 'books/add/add-book.html'
-    });
+    //$routeProvider.when('/books/add-book', {
+    //    templateUrl: 'books/add/add-book.html'
+    //});
 });

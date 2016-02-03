@@ -14,15 +14,6 @@ angular.module('app.books').controller('BookSearchController', function ($scope,
         }
     };
 
-    $scope.set_color = function(bookId) {
-      if(bookId % 2 == 0) {
-        return { color: "blue" }
-      }
-      else {
-        return { color: "red" }
-      }
-    }
-
     $scope.search = function () {
         bookService.search($scope.prefix).then(function (response) {
             angular.copy(response.data, $scope.books);

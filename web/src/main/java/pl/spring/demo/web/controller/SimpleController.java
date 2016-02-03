@@ -10,6 +10,10 @@ import java.util.Map;
 
 @Controller
 public class SimpleController {
+	
+	public SimpleController() {
+		// TODO Auto-generated constructor stub
+	}
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Map<String, Object> parameters) {

@@ -12,3 +12,4 @@ java/target
 *.bak
 target
 .metadata/
+.recommenders/

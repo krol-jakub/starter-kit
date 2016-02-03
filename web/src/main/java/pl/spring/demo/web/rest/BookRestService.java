@@ -14,6 +14,10 @@ public class BookRestService {
 
     @Autowired
     private BookService bookService;
+    
+    public BookRestService() {
+    	
+    }
 
     @RequestMapping(value = "/books-by-title", method = RequestMethod.GET)
     public List<BookTo> findBooksByTitle(@RequestParam(value = "titlePrefix", required = false) String titlePrefix) {
