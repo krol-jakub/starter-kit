@@ -5,9 +5,18 @@ angular.module('app.books').controller('BookModalController', function ($scope, 
     $scope.book.authors = [];
 
     $scope.addThatBook = function(book) {
-        $scope.comment = 'Sukces?';
-        authorsService.addTheAuthor(book.authors);
         bookService.addTheBook(book);
     };
+
+
+  $scope.addAuthor = function() {
+    var newItemNo = $scope.book.authors.length+1;
+    $scope.book.authors.push({});
+  };
+
+  $scope.removeAuthor = function() {
+    var lastItem = $scope.book.authors.length-1;
+    $scope.book.authors.splice(lastItem);
+  };
 
 });

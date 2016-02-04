@@ -10,6 +10,11 @@ import pl.spring.demo.entity.AuthorEntity;
 
 public interface AuthorRepository extends JpaRepository<AuthorEntity, Long> {
 	
-	@Query("select author from AuthorEntity author where upper(author.firstName) like concat(concat('%', upper(:name)), '%') or upper(author.lastName) like concat(concat('%', upper(:name)), '%')")
+	@Query("SELECT author"
+			+ " FROM AuthorEntity author"
+			+ " WHERE UPPER(author.firstName)"
+			+ " LIKE CONCAT(CONCAT('%', upper(:name)), '%')"
+			+ " OR UPPER(author.lastName) LIKE CONCAT(CONCAT('%', UPPER(:name)), '%')")
 	public List<AuthorEntity> findByName(@Param("name") String name);
+	
 }

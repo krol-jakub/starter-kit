@@ -22,13 +22,6 @@ angular.module('app.authors').controller('AuthorSearchController', function ($sc
         });
     };
 
-    $scope.deleteAuthor = function (authorId) {
-        authorsService.deleteAuthor(authorId).then(function () {
-            removeAuthorById(authorId);
-            Flash.create('success', 'Author was deleted.', 'custom-class');
-        });
-    };
-
     $scope.addAuthor = function () {
         $modal.open({
             templateUrl: 'authors/add/add-author-modal.html',

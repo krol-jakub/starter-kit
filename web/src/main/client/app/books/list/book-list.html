@@ -5,7 +5,7 @@
     <div flash-message="5000" ></div>
     <br>
     <p>Part of book title:</p>
-    <input type="text" ng-model="prefix">
+    <input type="text" ng-model="prefix" placeholder="Search...">
     <button ng-click="search()">Search</button>
     <button ng-click="addBook()">Add book</button>
 
@@ -15,6 +15,7 @@
             <th>Title</th>
             <th>Authors</th>
             <th>Delete</th>
+            <th>Edit</th>
         </tr>
       </thead>
       <tbody>
@@ -27,7 +28,10 @@
               </span>
             </td>
             <td>
-                <button ng-click="deleteBook(book.id)">Usuń</button>
+                <button ng-click="deleteBook(book.id)">Delete</button>
+            </td>
+            <td>
+                <button ng-click="editBook(book.id)">Edit</button>
             </td>
         </tr>
       </tbody>

@@ -4,13 +4,22 @@
             <h3 class="modal-title">Add a book (TODO: Allow multiple authors)</h3>
         </div>
         <div class="modal-body">
+          <table>
+            <tr>
+              <td>
+                <input type="text" placeholder="Book title" ng-required="true" ng-model="book.title" />
+              </td>
+              <td>
+                <fieldset data-ng-repeat="author in book.authors">
+                  <input type="text" placeholder="Author first name" ng-required="true" ng-model="author.firstName" />
+                  <input type="text" placeholder="Author last name" ng-required="true" ng-model="author.lastName" />
+                  <button class="btn btn-sm btn-danger" ng-show="$last" ng-click="removeAuthor()">Remove</button>
+                </fieldset>
+              </td>
+            </tr>
+          </table>
+          <button class="btn btn-success" ng-click="addAuthor()">Add another author</button>
             <p>
-              <input type="text" placeholder="Book title" ng-required="true" ng-model="book.title" />
-              <input type="text" placeholder="Author first name" ng-required="true" ng-model="book.authors[0].firstName" />
-              <input type="text" placeholder="Author last name" ng-required="true" ng-model="book.authors[0].lastName" />
-            </p>
-            <p>
-              {{ comment }}
               <pre>{{book | json}}</pre>
             </p>
         </div>
