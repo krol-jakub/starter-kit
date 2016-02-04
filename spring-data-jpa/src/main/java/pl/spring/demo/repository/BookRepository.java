@@ -11,8 +11,8 @@ public interface BookRepository extends JpaRepository<BookEntity, Long> {
 
     @Query("SELECT book"
     		+ " FROM BookEntity book"
-    		+ " WHERE book.title"
-    		+ " LIKE :title%")
+    		+ " WHERE UPPER(book.title)"
+    		+ " LIKE CONCAT(CONCAT('%',UPPER(:title),'%'))")
     public List<BookEntity> findBookByTitle(@Param("title") String title);
 
     @Query("select book from BookEntity book join book.authors authors where authors.firstName like %:author% or authors.lastName like %:author%")
