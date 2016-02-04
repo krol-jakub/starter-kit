@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="book in books">
+        <tr ng-repeat="book in books | filter:prefix ">
             <td>{{ book.title }}</td>
             <td>
               <span ng-repeat="author in book.authors">
@@ -31,7 +31,7 @@
                 <button ng-click="deleteBook(book.id)">Delete</button>
             </td>
             <td>
-                <button ng-click="editBook(book.id)">Edit</button>
+                <button ng-click="editBook(book)">Edit</button>
             </td>
         </tr>
       </tbody>

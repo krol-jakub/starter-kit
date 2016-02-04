@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="author in authors">
+        <tr ng-repeat="author in authors | filter:prefix">
             <td>{{ author.id }}</td>
             <td>{{ author.firstName }}</td>
             <td>{{ author.lastName }}</td>
