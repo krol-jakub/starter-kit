@@ -1,0 +1,25 @@
+<div>
+    <form novalidate>
+        <div class="modal-header">
+            <h3 class="modal-title">Edit a book</h3>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td>
+                <input type="text" placeholder="Book title" ng-model="title" value="{{book.id}}" />
+              </td>
+            </tr>
+          </table>
+            <p>
+              {{ comment }}
+              <pre>{{ book | json }}</pre>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" ng-click="editTheBook()">Save Book</button>
+            <button class="btn btn-info" ng-click="buttonClic()">Dummy button</button>
+            <button class="btn btn-warning" ng-click="$dismiss()">Close</button>
+        </div>
+    </form>
+</div>

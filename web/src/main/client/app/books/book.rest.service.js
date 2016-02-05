@@ -10,6 +10,9 @@ angular.module('app.books').factory('bookRestService', function ($http, currentC
         },
         addTheBook: function (book) {
           return $http.post(currentContextPath.get() + 'services/books/book', book, {timeout: 10000});
+        },
+        editTheBook: function (book) {
+          return $http.post(currentContextPath.get() + 'services/books/book', book, {timeout: 10000});
         }
     };
 });

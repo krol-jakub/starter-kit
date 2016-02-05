@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<section>
+<section ng-init="search()">
     <div flash-message="5000" ></div>
     <br>
     <p>Part of author first/last name:</p>
@@ -24,7 +24,7 @@
             <td>{{ author.firstName }}</td>
             <td>{{ author.lastName }}</td>
             <td>
-                <button ng-click="editAuthor(author.id)">Edit</button>
+                <button class="btn btn-primary" ng-click="editAuthor(author.id)">Edit</button>
             </td>
         </tr>
       </tbody>

@@ -47,13 +47,13 @@ public class BookServiceImpl implements BookService {
     @Override
     @Transactional(readOnly = false)
     public BookTo saveBook(BookTo book) {
-        BookEntity entity = BookMapper.map(book);
-        entity.getAuthors().forEach(author -> {
-        	if (author.getId() == null) {
-        		author = authorRepository.save(author);
-        	}
-        });
-        entity = bookRepository.save(entity);
+    	BookEntity entity = BookMapper.map(book);
+    		entity.getAuthors().forEach(author -> {
+    			if (author.getId() == null) {
+    				author = authorRepository.save(author);
+    			}
+    		});
+    		entity = bookRepository.save(entity);
         return BookMapper.map(entity);
     }
 

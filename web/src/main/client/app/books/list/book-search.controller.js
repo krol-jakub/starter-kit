@@ -19,41 +19,37 @@ angular.module('app.books').controller('BookSearchController', function ($scope,
         bookService.search($scope.prefix).then(function (response) {
             angular.copy(response.data, $scope.books);
         }, function () {
-            Flash.create('danger', 'Wyjątek', 'custom-class');
+            Flash.create('danger', 'Exception', 'custom-class');
         });
     };
 
     $scope.deleteBook = function (bookId) {
         bookService.deleteBook(bookId).then(function () {
             removeBookById(bookId);
-            Flash.create('success', 'Książka została usunięta.', 'custom-class');
+            Flash.create('success', 'Book was deleted!', 'custom-class');
         });
     };
 
     $scope.addBook = function () {
-        $modal.open({
-            templateUrl: 'books/add/add-book-modal.html',
-            controller: 'BookModalController',
-            size: 'lg'
-        });
+      $modal.open({
+        templateUrl: 'books/add/add-book-modal.html',
+        controller: 'BookModalController',
+        size: 'lg'
+      });
     };
 
-    $scope.editBook = function(bookId) {
+    $scope.editBook = function(book) {
       $modal.open({
-        templateUrl: 'books/add/edit-book-modal.html',
-        controller: 'BookModalController',
+        templateUrl: 'books/edit/edit-book-modal.html',
+        controller: 'EditBookModalController',
         size: 'lg',
         resolve : {
           book : function() {
             return book;
           }
         }
-      }).result.then(function() {
-        Flash.create('success', 'Book edit success.', 'custom-class');
-        $scope.search();
-      }, function() {
-        Flash.create('danger', 'Cannot edit book...', 'custom-class');
       });
     };
+
 
 });

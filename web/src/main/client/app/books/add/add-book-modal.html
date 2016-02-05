@@ -22,11 +22,12 @@
             <button class="btn btn-success" ng-click="addAuthor()">Add author</button>
           </p>
             <p>
+              {{ comment }}
               <pre>{{book | json}}</pre>
             </p>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-success" ng-click="addThatBook(book)" ng-disabled="!(author.length == 0)">Save Book</button>
+            <button class="btn btn-success" ng-click="addThatBook(book)">Save Book</button>
             <button class="btn btn-warning" ng-click="$dismiss()">Close</button>
         </div>
     </form>

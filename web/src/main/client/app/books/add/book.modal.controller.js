@@ -1,11 +1,17 @@
-angular.module('app.books').controller('BookModalController', function ($scope, $modalInstance, bookService, authorsService) {
+angular.module('app.books').controller('BookModalController', function ($scope, Flash, $modalInstance, bookService, authorsService) {
     'use strict';
 
     $scope.book = {};
     $scope.book.authors = [];
+    $scope.comment = '';
 
     $scope.addThatBook = function(book) {
-        bookService.addTheBook(book);
+      bookService.addTheBook(book).then(function () {
+          $modalInstance.close();
+          Flash.create('success', 'Book added', 'custom-class');
+      },function () {
+          Flash.create('danger', 'Book could not be added', 'custom-class');
+      });
     };
 
 

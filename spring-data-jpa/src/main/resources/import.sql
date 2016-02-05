@@ -12,7 +12,6 @@ insert into book (id, title) values (11, 'Jedenasta');
 insert into book (id, title) values (12, 'Narrenturm');
 insert into book (id, title) values (13, 'Spring for Dummies');
 
-
 insert into author(id, first_name, last_name) values (1, 'Jan', 'Kowalski');
 insert into author(id, first_name, last_name) values (2, 'Zbigniew', 'Nowak');
 insert into author(id, first_name, last_name) values (3, 'Janusz', 'Jankowski');
