@@ -1,11 +1,16 @@
-angular.module('app.authors').controller('AuthorModalController', function ($scope, $modalInstance, authorsService) {
+angular.module('app.authors').controller('AuthorModalController', function ($scope, $modalInstance, authorsService, Flash) {
     'use strict';
 
-    $scope.authors = {};
+    $scope.author = {};
 
-    $scope.addThatAuthor = function() {
+    $scope.addThatAuthor = function(author) {
         $scope.comment = 'ddd';
-        authorsService.addTheAuthor(authors);
-    };
+        authorsService.addTheAuthor(author).then(function () {
+            $modalInstance.close();
+            Flash.create('success', 'Author added', 'custom-class');
+        },function () {
+            Flash.create('danger', 'Author could not be added', 'custom-class');
+        });
+      };
 
 });

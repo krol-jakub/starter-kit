@@ -5,15 +5,6 @@ angular.module('app.authors').controller('AuthorSearchController', function ($sc
     $scope.prefix = '';
     $scope.gridOptions = { data: 'authors' };
 
-    var removeAuthorById = function (authorId) {
-        for (var i = 0; i < $scope.authors.length; i = i + 1) {
-            if ($scope.authors[i].id === authorId) {
-                $scope.authors.splice(i, 1);
-                break;
-            }
-        }
-    };
-
     $scope.search = function () {
         authorsService.search($scope.prefix).then(function (response) {
             angular.copy(response.data, $scope.authors);
@@ -28,6 +19,19 @@ angular.module('app.authors').controller('AuthorSearchController', function ($sc
             controller: 'AuthorModalController',
             size: 'lg'
         });
+    };
+
+    $scope.editAuthor = function(author) {
+      $modal.open({
+        templateUrl: 'authors/edit/edit-author-modal.html',
+        controller: 'EditAuthorModalController',
+        size: 'lg',
+        resolve : {
+          author : function() {
+            return author;
+          }
+        }
+      });
     };
 
 });

@@ -9,7 +9,10 @@ angular.module('app.authors').factory('authorsRestService', function ($http, cur
             return $http.delete(currentContextPath.get() + 'services/authors/author/' + authorId);
         },
         addTheAuthor: function (author) {
-          return $http.post(currentContextPath.get() + 'services/authors/author/', author, {timeout: 10000});
+          return $http.post(currentContextPath.get() + 'services/authors/author', author, {timeout: 10000});
+        },
+        editTheAuthor: function (author) {
+          return $http.post(currentContextPath.get() + 'services/authors/author', author, {timeout: 10000});
         }
     };
 });

@@ -10,6 +10,9 @@ angular.module('app.authors').factory('authorsService', function (authorsRestSer
         },
         addTheAuthor: function(author) {
           return authorsRestService.addTheAuthor(author);
+        },
+        editTheAuthor: function(author) {
+          return authorsRestService.editTheAuthor(author);
         }
     };
 });

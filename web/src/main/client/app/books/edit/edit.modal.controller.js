@@ -1,5 +1,6 @@
 angular.module('app.books').controller('EditBookModalController', function ($scope, $modalInstance, bookService, Flash, book) {
     'use strict';
+    
     $scope.book = book;
     $scope.title = $scope.book.title;
     $scope.comment = 'Sometext';
