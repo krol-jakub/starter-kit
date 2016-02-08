@@ -10,6 +10,7 @@ angular.module('app.books').controller('BookModalController', function ($scope, 
     }
 
     $scope.addThatBook = function(book) {
+      // book.authors[0] meaning that at least one author is defined - fields not null
       if(book.title != '' && (book.authors[0].firstName != null && book.authors[0].lastName != null)) {
         bookService.addTheBook(book).then(function () {
             $modalInstance.close();

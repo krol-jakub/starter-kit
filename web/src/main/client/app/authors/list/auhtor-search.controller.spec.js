@@ -16,5 +16,13 @@ describe('author controller', function () {
         // then
         expect($scope.search).toBeDefined();
     }));
-    
+
+    it('adding author is defined', inject(function($controller) {
+        //when
+        $controller('AuthorModalController', {$scope: $scope});
+        //then
+        expect($scope.addThatAuthor).toBeDefined();
+
+    }));
+
 });
