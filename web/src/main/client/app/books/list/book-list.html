@@ -24,7 +24,7 @@
             <td>
               <span ng-repeat="author in book.authors">
                 <span>{{ author.firstName + ' ' + author.lastName }}</span>
-                <span><br /></span>
+                <span ng-if="!$last"><br /></span>
               </span>
             </td>
             <td>
